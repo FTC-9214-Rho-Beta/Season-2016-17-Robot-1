@@ -22,6 +22,24 @@ public class ZEncoderBot extends OpMode {
 
 	@Override
 	public void loop() {
+		double leftPower = (-0.5*Math.pow(gamepad1.left_stick_y,2))+(0.5*Math.pow(gamepad1.right_stick_x,2));
+		double rightPower = (-0.5*Math.pow(gamepad1.left_stick_y,2))-(0.5*Math.pow(gamepad1.right_stick_x,2));
+		leftMotor.setPower(leftPower);
+		rightMotor.setPower(rightPower);
+		if (gamepad1.a){
+			resetEncoders();
+		}
 
+		leftEncoder = leftMotor.getCurrentPosition();
+		rightEncoder = rightMotor.getCurrentPosition();
+		telemetry.addData("Press A to reset encoder","");
+		telemetry.addData("L Encoder:	", leftEncoder);
+		telemetry.addData("R Encoder:	", rightEncoder);
+	}
+
+
+	public void resetEncoders(){
+		leftMotor.setTargetPosition(0);
+		rightMotor.setTargetPosition(0);
 	}
 }

@@ -64,7 +64,8 @@ public class ZSensitiveBot extends OpMode {
 			telemetry.addData("","");
 			telemetry.addData("OPTICAL DISTANCE SENSOR", "");
 			telemetry.addData("OpLight:	", opDistanceS.getLightDetected());
-			telemetry.addData("OpLightRaw:	", opDistanceS.getLightDetectedRaw());
+			telemetry.addData("OpLightRaw:	", opDistanceS.getRawLightDetected());
+			telemetry.addData("OpLightRawMax:	", opDistanceS.getRawLightDetectedMax());
 		} else if (i % x == 1) {
 			telemetry.addData("COLOR SENSOR","");
 			telemetry.addData("R:	", colorS.red());
@@ -78,7 +79,8 @@ public class ZSensitiveBot extends OpMode {
 		} else if (i % x == 2) {
 			telemetry.addData("GYRO SENSOR", "");
 			telemetry.addData("Heading:	", gyroS.getHeading());
-			telemetry.addData("Rotation:	", gyroS.getRotation());
+			telemetry.addData("Rot. Fraction:	", gyroS.getRotationFraction());
+			telemetry.addData("Heading(?):	", gyroS.getHeading());
 			telemetry.addData("rawX:	", gyroS.rawX());
 			telemetry.addData("rawY:	", gyroS.rawY());
 			telemetry.addData("rawZ:	", gyroS.rawZ());
@@ -100,7 +102,8 @@ public class ZSensitiveBot extends OpMode {
 		} else if (i % x == 4) {
 			telemetry.addData("LIGHT SENSOR", "");
 			telemetry.addData("L det'd:	", lightS.getLightDetected());
-			telemetry.addData("L det'd RAW:	", lightS.getLightDetectedRaw());
+			telemetry.addData("L det'd RAW:	", lightS.getRawLightDetected());
+			telemetry.addData("L det'd RAW Max:	", lightS.getRawLightDetectedMax());
 			telemetry.addData("Status:	", lightS.status());
 			telemetry.addData("Press 'A' to enable LED", "");
 			lightS.enableLed(gamepad1.a);

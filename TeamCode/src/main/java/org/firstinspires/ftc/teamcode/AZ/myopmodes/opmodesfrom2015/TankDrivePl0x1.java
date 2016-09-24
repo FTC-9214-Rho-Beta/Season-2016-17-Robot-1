@@ -44,7 +44,6 @@ public class TankDrivePl0x1 extends OpMode{
         if (gamepad1.y)  {armMotor.setPower(0.1);}
         else if (gamepad1.a) {armMotor.setPower(-0.1);}
         else {armMotor.setPower(0);}
-
         if (gamepad1.right_bumper) {spoolMotor.setPower(1.0);}
         else if (gamepad1.left_bumper) {spoolMotor.setPower (-1.0);}
         else {spoolMotor.setPower(0);}

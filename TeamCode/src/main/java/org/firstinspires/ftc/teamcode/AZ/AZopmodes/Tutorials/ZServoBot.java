@@ -28,6 +28,7 @@ public class ZServoBot extends OpMode {
 		servo2 = hardwareMap.servo.get("servo2");
 		servo1.setPosition(initPos);
 		servo2.setPosition(initPos);
+		servo1.setDirection(Servo.Direction.REVERSE);
 
 	}
 
@@ -61,8 +62,8 @@ public class ZServoBot extends OpMode {
 		servo1.setPosition(servo1pos);
 		servo2.setPosition(servo2pos);
 
-		telemetry.addData("Servo1 Pos:	", servo1pos);
-		telemetry.addData("Servo2 Pos:	", servo2pos);
+		telemetry.addData("Servo1 Pos:	", servo1.getPosition());
+		telemetry.addData("Servo2 Pos:	", servo2.getPosition());
 
 
 
